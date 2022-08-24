@@ -1,5 +1,6 @@
 require 'rspec'
 require './lib/venue'
+require 'pry'
 
 describe Venue do
   describe '#initialize' do
@@ -75,11 +76,15 @@ describe Venue do
       venue.add_patron('Bob')
       venue.add_patron('James')
       venue.add_patron('Cat')
+      venue.add_patron('Bill')
 
       expect(venue.over_capacity?).to eq true
+      
       venue.kick_out
+      
       expect(venue.over_capacity?).to eq false
+      expect(venue.patrons).not_to include('Cat')
+      expect(venue.patrons).not_to include('Bill')
     end
   end
-
 end

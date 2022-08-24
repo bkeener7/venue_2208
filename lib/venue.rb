@@ -30,6 +30,7 @@ class Venue
     def kick_out
         until over_capacity? == false
             @number_patrons -= 1
+            @patrons.pop
         end
     end
 end
