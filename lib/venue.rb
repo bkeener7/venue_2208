@@ -9,4 +9,10 @@ class Venue
     def add_patron(patron)
         @patrons << patron
     end
+    
+    def yell_at_patrons
+        return patrons.each do |patron|
+           patron.upcase!
+        end
+    end
 end
