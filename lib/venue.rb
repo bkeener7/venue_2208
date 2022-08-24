@@ -26,4 +26,10 @@ class Venue
         return false if @number_patrons <= 4
         true
     end
+
+    def kick_out
+        until over_capacity? == false
+            @number_patrons -= 1
+        end
+    end
 end
