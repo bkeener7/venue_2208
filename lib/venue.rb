@@ -17,9 +17,11 @@ class Venue
     end
     
     def yell_at_patrons
-        patrons.each do |patron|
-           patron.upcase!
-        end
+        yelling = []
+            patrons.each do |patron|
+            yelling << patron.upcase
+            end
+        yelling
     end
 
     def over_capacity?
